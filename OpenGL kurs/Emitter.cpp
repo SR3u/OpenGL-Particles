@@ -31,7 +31,7 @@ void Emitter::Init(Vector3D _p,Vector3D _d,long _delay,double _speed,double _spr
 }
 void Emitter::Emit()
 {
-    if (q->size()>maxParticles)
+    if (q->size()>=maxParticles)
         return;
     Particle np;
     Vector3D D(d.X+dRand(-spread, spread),

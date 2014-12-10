@@ -29,7 +29,8 @@ GLint Width,Height;
 GLdouble simStep=0.0;
 long delay_millis;
 
-Attractor attr;
+Attractor attr_point,*attr;
+PlaneAttractor attr_plane;
 Emitter em;
 particles_t pq;
 
@@ -40,17 +41,21 @@ int cam=0,max_cam=3;
 void InitParticles(void)
 {
     //init attractor
-    attr.Init(Vector3D(-25, 0, 0),//position
-              1,//size
+    attr_plane.Init(Vector3D(-25, 0, 0),//position
+              25,//size
               500000);//mass
+    attr_point.Init(Vector3D(-25, 0, 0),//position
+                    2,//size
+                    500000);//mass
+    attr=&attr_point;
     //init emitter
     em.Init(Vector3D(25,0,0),//pos
             Vector3D(-1,0,1),//dir
             50,//delay
             10,//speed
-            0.2,//spread
+            0,//0.2,//spread
             10,//particle mass
-            &attr, &pq,//attractor and particles container
+            attr, &pq,//attractor and particles container
             16384/*Max particles*/);
 }
 
@@ -99,8 +104,8 @@ void SetCam(void)
             d+=em.p;
             break;
         case 2:
-            p+=attr.p;
-            d+=attr.p;
+            p+=attr->p;
+            d+=attr->p;
             break;
         case 3:
             p+=pq.begin()->p;
@@ -157,11 +162,11 @@ void DisplayFunc(void)
     {
         i->Draw();
     }
-    attr.UpdateParticles(pq, delay_millis);
+    attr->UpdateParticles(pq, delay_millis);
     em.Draw();
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, tex[0].texID);
-    attr.Draw();
+    attr->Draw();
     glDisable(GL_TEXTURE_2D);
     
     simStep+=0.01;
@@ -233,11 +238,21 @@ void KeyboardFunc(unsigned char key,int par1,int par2)
 {
     switch (key)
     {
-        case GLUT_KEY_UP:
+        case 'w':
+        case 'W':
             cam++;
             break;
-        case GLUT_KEY_DOWN:
+        case 'S':
+        case 's':
             cam--;
+            break;
+        case 'A':
+        case 'a':
+            attr=&attr_point;
+            break;
+        case 'D':
+        case 'd':
+            attr=&attr_plane;
             break;
         default:
             break;

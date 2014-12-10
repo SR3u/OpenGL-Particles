@@ -18,10 +18,10 @@ void PlaneAttractor::Init(Vector3D _p,double _size,double _mass)
     c.Y=p.Y+size/2;
     c.Z=p.Z+size/2;
     
-    C[0]=Vector3D(0,0,0);
-    C[1]=Vector3D(0,0 + size, 0);
-    C[2]=Vector3D(0,0 + size, 0 + size);
-    C[3]=Vector3D(0,0,0 + size);
+    C[0]=Vector3D(0,-size/2.0,-size/2.0);
+    C[1]=Vector3D(0,+size/2.0,-size/2.0);
+    C[2]=Vector3D(0,+size/2.0,+size/2.0);
+    C[3]=Vector3D(0,-size/2.0,+size/2.0);
 
     
     C[0]+=p;
@@ -32,40 +32,58 @@ void PlaneAttractor::Init(Vector3D _p,double _size,double _mass)
     m=_mass;
     alphadistance=25;
 }
-bool Col(Vector3D &p, Vector3D &o, Vector3D v[4],double s)
+bool Col(Vector3D &p, Vector3D &o, Vector3D v[4])
 {
     if (((p.X-v[0].X)*(o.X-v[0].X))<0)
     {
-        if ((p.Y>=v[0].Y&&p.Y<=v[2].Y))
+        /*if ((p.Y>=v[0].Y&&p.Y<=v[2].Y))
             if((p.Z>=v[0].Z&&p.Z<=v[2].Z))
-                return true;
+                return true;*/
+        if (p.Y<v[0].Y)
+            return false;
+        if(p.Y>v[2].Y)
+            return false;
+        if(p.Z<v[0].Z)
+            return false;
+        if(p.Z>v[2].Z)
+            return false;
+        return true;
     }
     return false;
 }
+void bound(Vector3D &p, Vector3D v[4])
+{
+    if (p.X<v[0].X)
+    {
+        if (p.Y<v[0].Y)
+            p.Y=v[0].Y;
+        if(p.Y>v[2].Y)
+            p.Y=v[2].Y;
+        if(p.Z>=v[0].Z)
+            p.Z=v[0].Z;
+        if(p.Z<=v[2].Z)
+            p.Z=v[2].Z;
+    }
+}
 void PlaneAttractor::UpdateParticle(Particle &P,long delay_millis)
 {
-    double distance=(P.p-p).getLen();
+    Vector3D nPos(p);
+    bound(nPos, C);
+    double distance=(P.p-nPos).getLen();
     double delay=delay_millis/1000.0;
+#if ALPHA_CHANGE
     P.alpha=distance/alphadistance;
+#endif
     Vector3D Pos,Dir,oldPos=P.p;
     Pos=P.p+P.d*delay;
-    Dir=(p-P.p)*delay*(m*GRAVITY_CONST)/(distance*distance)+P.d;
-    if (((P.p-p)*(oldPos-p)==-1)||distance<size||distance>P.maxdistance)
+    Dir=(nPos-P.p)*delay*(m*GRAVITY_CONST)/(distance*distance)+P.d;
+    if (distance>P.maxdistance||Col(Pos, P.p, C))
     {
         P.dead=true;
     }
+    P.oldP=P.p;
     P.p=Pos;P.d=Dir;
 }
-
-/* void Particle::Collide(double distance,double delay)
- {
- if (distance>maxdistance*2)
- dead=true;
- if (Col((Vector3D*)attr->C, attr->size))
- dead=true;
- }
- */
-
 void PlaneAttractor::Draw()
 {
     glPushMatrix();

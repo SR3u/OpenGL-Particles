@@ -19,6 +19,9 @@ const double GRAVITY_CONSTS[]={0.000000000066742,0.00000000066742, //1,2
                                0.00133484};//16
 #define REAL_GRAVITY_CONST GRAVITY_CONSTS[0]
 #define GRAVITY_CONST GRAVITY_CONSTS[15]
+
+#define ALPHA_CHANGE 1
+
 class Particle
 {
 public:
