@@ -29,7 +29,7 @@ void Attractor::Init(Vector3D _p,double _size,double _mass)
     C[2]+=p;
     C[3]+=p;
     
-    
+    alphadistance=25;
     p=c;
     m=_mass;
 }
@@ -49,7 +49,7 @@ void Attractor::UpdateParticle(Particle &P,long delay_millis)
 {
     double distance=(P.p-p).getLen();
     double delay=delay_millis/1000.0;
-    //P.alpha=distance/maxdistance;
+    P.alpha=distance/alphadistance;
     Vector3D Pos,Dir,oldPos=P.p;
     Pos=P.p+P.d*delay;
     Dir=(p-P.p)*delay*(m*GRAVITY_CONST)/(distance*distance)+P.d;

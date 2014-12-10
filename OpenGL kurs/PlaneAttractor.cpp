@@ -30,6 +30,7 @@ void PlaneAttractor::Init(Vector3D _p,double _size,double _mass)
     C[3]+=p;
     p=c;
     m=_mass;
+    alphadistance=25;
 }
 bool Col(Vector3D &p, Vector3D &o, Vector3D v[4],double s)
 {
@@ -45,7 +46,7 @@ void PlaneAttractor::UpdateParticle(Particle &P,long delay_millis)
 {
     double distance=(P.p-p).getLen();
     double delay=delay_millis/1000.0;
-    //P.alpha=distance/maxdistance;
+    P.alpha=distance/alphadistance;
     Vector3D Pos,Dir,oldPos=P.p;
     Pos=P.p+P.d*delay;
     Dir=(p-P.p)*delay*(m*GRAVITY_CONST)/(distance*distance)+P.d;

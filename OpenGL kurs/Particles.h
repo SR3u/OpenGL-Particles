@@ -46,6 +46,7 @@ typedef std::list<Particle> particles_t;
 class Attractor//Point attractor
 {
 public:
+    double alphadistance;
     Vector3D p;
     Vector3D C[4];
     double size;
