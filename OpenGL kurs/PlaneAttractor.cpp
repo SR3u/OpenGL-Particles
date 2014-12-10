@@ -1,5 +1,5 @@
 //
-//  Attractor.cpp
+//  PlaneAttractor.cpp
 //  OpenGL kurs
 //
 //  Created by SR3u on 10.12.14.
@@ -9,7 +9,7 @@
 #include "Particles.h"
 #include "Primitives.h"
 
-void Attractor::Init(Vector3D _p,double _size,double _mass)
+void PlaneAttractor::Init(Vector3D _p,double _size,double _mass)
 {
     p=_p;
     size=_size;
@@ -28,47 +28,52 @@ void Attractor::Init(Vector3D _p,double _size,double _mass)
     C[1]+=p;
     C[2]+=p;
     C[3]+=p;
-    
-    
     p=c;
     m=_mass;
 }
-
-void Attractor::UpdateParticles(particles_t &P,long delay_millis)
+bool Col(Vector3D &p, Vector3D &o, Vector3D v[4],double s)
 {
-    for (particles_t::iterator i=P.begin(); i!=P.end(); i++)
+    if (((p.X-v[0].X)*(o.X-v[0].X))<0)
     {
-        this->UpdateParticle(*i, delay_millis);
-        if (i->dead)
-        {
-            P.erase(i);
-        }
+        if ((p.Y>=v[0].Y&&p.Y<=v[2].Y))
+            if((p.Z>=v[0].Z&&p.Z<=v[2].Z))
+                return true;
     }
+    return false;
 }
-void Attractor::UpdateParticle(Particle &P,long delay_millis)
+void PlaneAttractor::UpdateParticle(Particle &P,long delay_millis)
 {
     double distance=(P.p-p).getLen();
     double delay=delay_millis/1000.0;
     //P.alpha=distance/maxdistance;
     Vector3D Pos,Dir,oldPos=P.p;
     Pos=P.p+P.d*delay*P.speed;
-    Dir=(p-P.p)*delay*(m*GRAVITY_CONST)/(distance*distance)+P.d*P.speed;
+    Dir=(p-P.p)*delay*(m*P.m*GRAVITY_CONST)/(distance*distance)+P.d*P.speed;
     P.speed=Dir.getLen();
     Dir=Dir*(1.0/Dir.getLen());
-    if (((P.p-p)*(oldPos-p)==-1)||distance<size||distance>P.maxdistance)
+    P.oldP=oldPos;
+    if (Col(P.p, P.oldP, C, size)||distance>P.maxdistance)
     {
         P.dead=true;
     }
     P.p=Pos;P.d=Dir;
 }
 
-void Attractor::Draw()
+/* void Particle::Collide(double distance,double delay)
+ {
+ if (distance>maxdistance*2)
+ dead=true;
+ if (Col((Vector3D*)attr->C, attr->size))
+ dead=true;
+ }
+ */
+
+void PlaneAttractor::Draw()
 {
     glPushMatrix();
     glTranslated(C[0].X, C[0].Y, C[0].Z);
     glScaled(size, size, size);
-    glColor4d(1, 0, 0, 1);
-    glutSolidSphere(1, 10, 10);
-    //Plane(1, GL_QUADS);
+    glColor4d(1, 1, 1, 1);
+    Plane(1, GL_QUADS);
     glPopMatrix();
 }

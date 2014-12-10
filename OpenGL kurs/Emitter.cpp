@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 SR3u. All rights reserved.
 //
 
-#include "Emitter.h"
+#include "Particles.h"
 #include <cstdlib>
 
 double dRand(double fMin, double fMax)
@@ -15,7 +15,7 @@ double dRand(double fMin, double fMax)
     return fMin+f*(fMax - fMin);
 }
 
-void Emitter::Init(Vector3D _p,Vector3D _d,long _delay,double _speed,double _spread,const Attractor *_attr,particles_t *_q,size_t _maxParticles)
+void Emitter::Init(Vector3D _p,Vector3D _d,long _delay,double _speed,double _spread,double _mass,const Attractor *_attr,particles_t *_q,size_t _maxParticles)
 {
     attr=_attr;
     speed=_speed;
@@ -26,6 +26,7 @@ void Emitter::Init(Vector3D _p,Vector3D _d,long _delay,double _speed,double _spr
     q=_q;
     curdelay=0;
     d=d*(1.0/d.getLen());
+    m=_mass;
     maxParticles=_maxParticles;
 }
 void Emitter::Emit()
@@ -37,7 +38,7 @@ void Emitter::Emit()
                d.Y+dRand(-spread, spread),
                d.Z+dRand(-spread, spread));
     D=D*(1.0/D.getLen())*speed;
-    np.Init(p,D,attr,(p-attr->c).getLen());
+    np.Init(p,D,speed,m,(p-attr->p).getLen()*10);
     q->push_back(np);
 }
 void Emitter::Update(long delay_millis)
@@ -58,7 +59,7 @@ void Emitter::Draw()
 {
     glPushMatrix();
     glTranslated(p.X, p.Y, p.Z);
-    glColor4d(1, 1, 1, 1);
+    glColor4d(0, 1, 0, 1);
     glutSolidSphere(1, 10, 10);
     glPopMatrix();
     /*glPushMatrix();

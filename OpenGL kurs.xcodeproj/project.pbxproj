@@ -16,6 +16,8 @@
 		4ECF72FA1A387BF000A97847 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72F81A387BF000A97847 /* Particle.cpp */; };
 		4ECF72FD1A387C4200A97847 /* Primitives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72FB1A387C4200A97847 /* Primitives.cpp */; };
 		4ECF73001A38804500A97847 /* Emitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72FE1A38804500A97847 /* Emitter.cpp */; };
+		4ECF730B1A38DD8500A97847 /* PlaneAttractor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF730A1A38DD8500A97847 /* PlaneAttractor.cpp */; };
+		4ECF730E1A38E0C600A97847 /* OpenGL_Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF730C1A38E0C600A97847 /* OpenGL_Text.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,18 +38,20 @@
 		4ECF72EA1A38780D00A97847 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GLUT.framework; sourceTree = "<group>"; };
 		4ECF72EB1A38780D00A97847 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenGL.framework; sourceTree = "<group>"; };
 		4ECF72EE1A3878E200A97847 /* Attractor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Attractor.cpp; sourceTree = "<group>"; };
-		4ECF72EF1A3878E200A97847 /* Attractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attractor.h; sourceTree = "<group>"; };
 		4ECF72F11A387A2E00A97847 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
 		4ECF72F21A387A2E00A97847 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
 		4ECF72F31A387A2E00A97847 /* Tga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tga.h; sourceTree = "<group>"; };
 		4ECF72F41A387A2E00A97847 /* TGALoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TGALoader.cpp; sourceTree = "<group>"; };
 		4ECF72F81A387BF000A97847 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Particle.cpp; sourceTree = "<group>"; };
-		4ECF72F91A387BF000A97847 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Particle.h; sourceTree = "<group>"; };
 		4ECF72FB1A387C4200A97847 /* Primitives.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Primitives.cpp; sourceTree = "<group>"; };
 		4ECF72FC1A387C4200A97847 /* Primitives.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Primitives.h; sourceTree = "<group>"; };
 		4ECF72FE1A38804500A97847 /* Emitter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Emitter.cpp; sourceTree = "<group>"; };
-		4ECF72FF1A38804500A97847 /* Emitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emitter.h; sourceTree = "<group>"; };
 		4ECF73031A38977B00A97847 /* Vector3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector3D.h; sourceTree = "<group>"; };
+		4ECF73091A38D4FC00A97847 /* Particles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Particles.h; sourceTree = "<group>"; };
+		4ECF730A1A38DD8500A97847 /* PlaneAttractor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlaneAttractor.cpp; sourceTree = "<group>"; };
+		4ECF730C1A38E0C600A97847 /* OpenGL_Text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenGL_Text.cpp; sourceTree = "<group>"; };
+		4ECF730D1A38E0C600A97847 /* OpenGL_Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGL_Text.h; sourceTree = "<group>"; };
+		4ECF73101A38E75A00A97847 /* MemUsage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemUsage.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 				4ECF72F71A387B1800A97847 /* Textures */,
 				4ECF72DD1A3877E300A97847 /* main.cpp */,
 				4ECF73011A38804C00A97847 /* ParticleSystem */,
+				4ECF730F1A38E0CB00A97847 /* Text */,
+				4ECF73101A38E75A00A97847 /* MemUsage.h */,
 			);
 			path = "OpenGL kurs";
 			sourceTree = "<group>";
@@ -107,15 +113,23 @@
 		4ECF73011A38804C00A97847 /* ParticleSystem */ = {
 			isa = PBXGroup;
 			children = (
+				4ECF73091A38D4FC00A97847 /* Particles.h */,
 				4ECF72EE1A3878E200A97847 /* Attractor.cpp */,
-				4ECF72EF1A3878E200A97847 /* Attractor.h */,
+				4ECF730A1A38DD8500A97847 /* PlaneAttractor.cpp */,
 				4ECF72F81A387BF000A97847 /* Particle.cpp */,
-				4ECF72F91A387BF000A97847 /* Particle.h */,
 				4ECF72FE1A38804500A97847 /* Emitter.cpp */,
-				4ECF72FF1A38804500A97847 /* Emitter.h */,
 				4ECF73031A38977B00A97847 /* Vector3D.h */,
 			);
 			name = ParticleSystem;
+			sourceTree = "<group>";
+		};
+		4ECF730F1A38E0CB00A97847 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				4ECF730C1A38E0C600A97847 /* OpenGL_Text.cpp */,
+				4ECF730D1A38E0C600A97847 /* OpenGL_Text.h */,
+			);
+			name = Text;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,12 +189,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ECF72F51A387A2E00A97847 /* Texture.cpp in Sources */,
+				4ECF730E1A38E0C600A97847 /* OpenGL_Text.cpp in Sources */,
 				4ECF72FA1A387BF000A97847 /* Particle.cpp in Sources */,
 				4ECF72F61A387A2E00A97847 /* TGALoader.cpp in Sources */,
 				4ECF72FD1A387C4200A97847 /* Primitives.cpp in Sources */,
 				4ECF72DE1A3877E300A97847 /* main.cpp in Sources */,
 				4ECF72F01A3878E200A97847 /* Attractor.cpp in Sources */,
 				4ECF73001A38804500A97847 /* Emitter.cpp in Sources */,
+				4ECF730B1A38DD8500A97847 /* PlaneAttractor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
