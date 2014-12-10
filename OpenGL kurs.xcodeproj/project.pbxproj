@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		4ECF72DE1A3877E300A97847 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72DD1A3877E300A97847 /* main.cpp */; };
+		4ECF72EC1A38780D00A97847 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF72EA1A38780D00A97847 /* GLUT.framework */; };
+		4ECF72ED1A38780D00A97847 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF72EB1A38780D00A97847 /* OpenGL.framework */; };
+		4ECF72F01A3878E200A97847 /* Attractor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72EE1A3878E200A97847 /* Attractor.cpp */; };
+		4ECF72F51A387A2E00A97847 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72F11A387A2E00A97847 /* Texture.cpp */; };
+		4ECF72F61A387A2E00A97847 /* TGALoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72F41A387A2E00A97847 /* TGALoader.cpp */; };
+		4ECF72FA1A387BF000A97847 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72F81A387BF000A97847 /* Particle.cpp */; };
+		4ECF72FD1A387C4200A97847 /* Primitives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72FB1A387C4200A97847 /* Primitives.cpp */; };
+		4ECF73001A38804500A97847 /* Emitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72FE1A38804500A97847 /* Emitter.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +33,21 @@
 /* Begin PBXFileReference section */
 		4ECF72DA1A3877E300A97847 /* OpenGL kurs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OpenGL kurs"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECF72DD1A3877E300A97847 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4ECF72EA1A38780D00A97847 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GLUT.framework; sourceTree = "<group>"; };
+		4ECF72EB1A38780D00A97847 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenGL.framework; sourceTree = "<group>"; };
+		4ECF72EE1A3878E200A97847 /* Attractor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Attractor.cpp; sourceTree = "<group>"; };
+		4ECF72EF1A3878E200A97847 /* Attractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attractor.h; sourceTree = "<group>"; };
+		4ECF72F11A387A2E00A97847 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		4ECF72F21A387A2E00A97847 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		4ECF72F31A387A2E00A97847 /* Tga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tga.h; sourceTree = "<group>"; };
+		4ECF72F41A387A2E00A97847 /* TGALoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TGALoader.cpp; sourceTree = "<group>"; };
+		4ECF72F81A387BF000A97847 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Particle.cpp; sourceTree = "<group>"; };
+		4ECF72F91A387BF000A97847 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Particle.h; sourceTree = "<group>"; };
+		4ECF72FB1A387C4200A97847 /* Primitives.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Primitives.cpp; sourceTree = "<group>"; };
+		4ECF72FC1A387C4200A97847 /* Primitives.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Primitives.h; sourceTree = "<group>"; };
+		4ECF72FE1A38804500A97847 /* Emitter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Emitter.cpp; sourceTree = "<group>"; };
+		4ECF72FF1A38804500A97847 /* Emitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emitter.h; sourceTree = "<group>"; };
+		4ECF73031A38977B00A97847 /* Vector3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector3D.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ECF72EC1A38780D00A97847 /* GLUT.framework in Frameworks */,
+				4ECF72ED1A38780D00A97847 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +66,8 @@
 		4ECF72D11A3877E300A97847 = {
 			isa = PBXGroup;
 			children = (
+				4ECF72EA1A38780D00A97847 /* GLUT.framework */,
+				4ECF72EB1A38780D00A97847 /* OpenGL.framework */,
 				4ECF72DC1A3877E300A97847 /* OpenGL kurs */,
 				4ECF72DB1A3877E300A97847 /* Products */,
 			);
@@ -57,9 +84,38 @@
 		4ECF72DC1A3877E300A97847 /* OpenGL kurs */ = {
 			isa = PBXGroup;
 			children = (
+				4ECF72F71A387B1800A97847 /* Textures */,
 				4ECF72DD1A3877E300A97847 /* main.cpp */,
+				4ECF73011A38804C00A97847 /* ParticleSystem */,
 			);
 			path = "OpenGL kurs";
+			sourceTree = "<group>";
+		};
+		4ECF72F71A387B1800A97847 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				4ECF72F11A387A2E00A97847 /* Texture.cpp */,
+				4ECF72F21A387A2E00A97847 /* Texture.h */,
+				4ECF72F31A387A2E00A97847 /* Tga.h */,
+				4ECF72F41A387A2E00A97847 /* TGALoader.cpp */,
+				4ECF72FB1A387C4200A97847 /* Primitives.cpp */,
+				4ECF72FC1A387C4200A97847 /* Primitives.h */,
+			);
+			name = Textures;
+			sourceTree = "<group>";
+		};
+		4ECF73011A38804C00A97847 /* ParticleSystem */ = {
+			isa = PBXGroup;
+			children = (
+				4ECF72EE1A3878E200A97847 /* Attractor.cpp */,
+				4ECF72EF1A3878E200A97847 /* Attractor.h */,
+				4ECF72F81A387BF000A97847 /* Particle.cpp */,
+				4ECF72F91A387BF000A97847 /* Particle.h */,
+				4ECF72FE1A38804500A97847 /* Emitter.cpp */,
+				4ECF72FF1A38804500A97847 /* Emitter.h */,
+				4ECF73031A38977B00A97847 /* Vector3D.h */,
+			);
+			name = ParticleSystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ECF72F51A387A2E00A97847 /* Texture.cpp in Sources */,
+				4ECF72FA1A387BF000A97847 /* Particle.cpp in Sources */,
+				4ECF72F61A387A2E00A97847 /* TGALoader.cpp in Sources */,
+				4ECF72FD1A387C4200A97847 /* Primitives.cpp in Sources */,
 				4ECF72DE1A3877E300A97847 /* main.cpp in Sources */,
+				4ECF72F01A3878E200A97847 /* Attractor.cpp in Sources */,
+				4ECF73001A38804500A97847 /* Emitter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +264,10 @@
 		4ECF72E21A3877E300A97847 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -209,6 +275,10 @@
 		4ECF72E31A3877E300A97847 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
