@@ -38,12 +38,11 @@ void Particle::Draw()
     glutSolidSphere(1, 3, 3);
     glPopMatrix();
 }
-void Particle::Init(Vector3D _p, Vector3D _d,double _speed,double _mass, double _maxdistance)
+void Particle::Init(Vector3D _p, Vector3D _d,double _mass, double _maxdistance)
 {
     p=_p;
     maxdistance=_maxdistance;
     d=_d;
-    speed=_speed;
     alpha=1;
     m=_mass;
     dead=false;
@@ -51,6 +50,6 @@ void Particle::Init(Vector3D _p, Vector3D _d,double _speed,double _mass, double 
 
 Particle Particle::operator=(const Particle& P)
 {
-    Init(P.p, P.d,P.speed,P.m,P.maxdistance);
+    Init(P.p, P.d,P.m,P.maxdistance);
     return *this;
 }

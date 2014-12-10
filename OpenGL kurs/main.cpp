@@ -42,16 +42,16 @@ void InitParticles(void)
     //init attractor
     attr.Init(Vector3D(-25, 0, 0),//position
               1,//size
-              50000000);//mass
+              500000);//mass
     //init emitter
     em.Init(Vector3D(25,0,0),//pos
             Vector3D(-1,0,1),//dir
-            1,//delay
+            50,//delay
             10,//speed
-            0,//spread
+            0.2,//spread
             10,//particle mass
             &attr, &pq,//attractor and particles container
-            1/*Max particles*/);
+            16384/*Max particles*/);
 }
 
 double CalculateFrameRate(bool use_stdout,long delay)//returns last calculated FPS

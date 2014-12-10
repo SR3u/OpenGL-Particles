@@ -26,15 +26,13 @@ public:
     Vector3D p,d;
     Vector3D oldP;//Position in previous frame
     double maxdistance;
-    double speed;
     double alpha;//Alpha channel
     bool dead;//if true, particle will be removed
     //Drawing
     void Draw();
     //Drawing
     void Init(Vector3D _p,//position
-              Vector3D _d,//direction
-              double _speed,//particle speed
+              Vector3D _d,//speed
               double _mass,//particle mass
               double _maxdistance/*max distance between attractor and particle
                                    if distance is greater^ particle will be removed*/);

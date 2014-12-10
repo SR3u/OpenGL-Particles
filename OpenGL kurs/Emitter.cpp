@@ -38,7 +38,7 @@ void Emitter::Emit()
                d.Y+dRand(-spread, spread),
                d.Z+dRand(-spread, spread));
     D=D*(1.0/D.getLen())*speed;
-    np.Init(p,D,speed,m,(p-attr->p).getLen()*10);
+    np.Init(p,D,m,(p-attr->p).getLen()*10);
     q->push_back(np);
 }
 void Emitter::Update(long delay_millis)

@@ -47,12 +47,9 @@ void PlaneAttractor::UpdateParticle(Particle &P,long delay_millis)
     double delay=delay_millis/1000.0;
     //P.alpha=distance/maxdistance;
     Vector3D Pos,Dir,oldPos=P.p;
-    Pos=P.p+P.d*delay*P.speed;
-    Dir=(p-P.p)*delay*(m*P.m*GRAVITY_CONST)/(distance*distance)+P.d*P.speed;
-    P.speed=Dir.getLen();
-    Dir=Dir*(1.0/Dir.getLen());
-    P.oldP=oldPos;
-    if (Col(P.p, P.oldP, C, size)||distance>P.maxdistance)
+    Pos=P.p+P.d*delay;
+    Dir=(p-P.p)*delay*(m*GRAVITY_CONST)/(distance*distance)+P.d;
+    if (((P.p-p)*(oldPos-p)==-1)||distance<size||distance>P.maxdistance)
     {
         P.dead=true;
     }
