@@ -16,7 +16,7 @@ void PlaneAttractor::Init(Vector3D _p,double _size,double _mass)
     Vector3D c;
     c.X=p.X+size/2;
     c.Y=p.Y+size/2;
-    c.Z=p.Y+size/2;
+    c.Z=p.Z+size/2;
     
     C[0]=Vector3D(0,0,0);
     C[1]=Vector3D(0,0 + size, 0);
