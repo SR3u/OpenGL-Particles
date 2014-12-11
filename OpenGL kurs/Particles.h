@@ -26,6 +26,7 @@ class Particle
 {
 public:
     double m;//mass
+    double alphaspeed;//maxspeed achieved
     Vector3D p,d;
     Vector3D oldP;//Position in previous frame
     double maxdistance;
@@ -49,7 +50,7 @@ typedef std::list<Particle> particles_t;
 class Attractor//Point attractor
 {
 public:
-    double alphadistance;
+    double maxSpeed;
     Vector3D p;
     Vector3D C[4];
     double size;

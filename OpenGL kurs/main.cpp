@@ -29,14 +29,17 @@ GLint Width,Height;
 GLdouble simStep=0.0;
 long delay_millis;
 
-Attractor attr_point,*attr;
-PlaneAttractor attr_plane;
+Attractor attr_point,attr_point1,*attr[255];
+PlaneAttractor attr_plane,attr_plane1;
+int curAttr=3,max_attr=3;
+double spread[]={0.0,0.2,0.5,1,10};
+int curS=1,max_s=4;
 Emitter em;
 particles_t pq;
 
 Texture tex[255];
 
-int cam=0,max_cam=3;
+int cam=0,max_cam=4;
 
 void InitParticles(void)
 {
@@ -47,15 +50,24 @@ void InitParticles(void)
     attr_point.Init(Vector3D(-25, 0, 0),//position
                     2,//size
                     500000);//mass
-    attr=&attr_point;
+    attr_plane1.Init(Vector3D(-25, 0, 0),//position
+                    50,//size
+                    2000000);//mass
+    attr_point1.Init(Vector3D(-25, 0, 0),//position
+                    4,//size
+                    2000000);//mass
+    attr[0]=&attr_point;
+    attr[1]=&attr_plane;
+    attr[2]=&attr_point1;
+    attr[3]=&attr_plane1;
     //init emitter
     em.Init(Vector3D(25,0,0),//pos
-            Vector3D(-1,0,1),//dir
-            50,//delay
+            Vector3D(-1,1,1),//dir
+            1,//delay
             10,//speed
-            0,//0.2,//spread
+            spread[curS],//spread
             10,//particle mass
-            attr, &pq,//attractor and particles container
+            attr[0], &pq,//attractor and particles container
             16384/*Max particles*/);
 }
 
@@ -98,18 +110,21 @@ void SetCam(void)
     d.Z=0;
     switch (cam) {
         case 0:
+            p=p*5;
             break;
         case 1:
             p+=em.p;
             d+=em.p;
             break;
         case 2:
-            p+=attr->p;
-            d+=attr->p;
+            p+=attr[curAttr]->p;
+            d+=attr[curAttr]->p;
             break;
         case 3:
             p+=pq.begin()->p;
             d+=pq.begin()->p;
+            break;
+        case 4:
             break;
         default:
             break;
@@ -162,11 +177,11 @@ void DisplayFunc(void)
     {
         i->Draw();
     }
-    attr->UpdateParticles(pq, delay_millis);
+    attr[curAttr]->UpdateParticles(pq, delay_millis);
     em.Draw();
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, tex[0].texID);
-    attr->Draw();
+    attr[curAttr]->Draw();
     glDisable(GL_TEXTURE_2D);
     
     simStep+=0.01;
@@ -176,8 +191,17 @@ void DisplayFunc(void)
     glLoadIdentity();
     gluOrtho2D(0, Width,0,Height);
     glColor4d(1, 1, 1, 1);
-    ss<<"FPS: "<<(int)fps<<" Particles: "<<pq.size()<<"/"<<em.maxParticles<<"\n";
+    ss<<"FPS: "<<(int)fps<<" Particles: "<<pq.size()<<"/"<<em.maxParticles;
     OutTextXY(ss.str(), 5, Height-15, 0.1);
+    ss.str("");
+    ss<<"Max particle speed: "<<attr[curAttr]->maxSpeed;
+    OutTextXY(ss.str(), 5, Height-30, 0.1);
+    ss.str("");
+    ss<<"Attractor mass: "<<attr[curAttr]->m;
+    OutTextXY(ss.str(), 5, Height-45, 0.1);
+    ss.str("");
+    ss<<"Emitter spread: "<<em.spread;
+    OutTextXY(ss.str(), 5, Height-60, 0.1);
     glPopAttrib();
     glutSwapBuffers();
     em.Update(delay_millis);
@@ -248,11 +272,19 @@ void KeyboardFunc(unsigned char key,int par1,int par2)
             break;
         case 'A':
         case 'a':
-            attr=&attr_point;
+            curAttr--;
             break;
         case 'D':
         case 'd':
-            attr=&attr_plane;
+            curAttr++;
+            break;
+        case 'Q':
+        case 'q':
+            curS--;
+            break;
+        case 'E':
+        case 'e':
+            curS++;
             break;
         default:
             break;
@@ -261,7 +293,15 @@ void KeyboardFunc(unsigned char key,int par1,int par2)
         cam=max_cam;
     if (cam>max_cam)
         cam=0;
-
+    if (curAttr<0)
+        curAttr=max_attr;
+    if (curAttr>max_attr)
+        curAttr=0;
+    if (curS<0)
+        curS=max_s;
+    if (curS>max_s)
+        curS=0;
+    em.spread=spread[curS];
     glutPostRedisplay();
 }
 int main(int argc, char** argv)

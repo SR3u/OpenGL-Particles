@@ -45,11 +45,13 @@ void Particle::Init(Vector3D _p, Vector3D _d,double _mass, double _maxdistance)
     d=_d;
     alpha=1;
     m=_mass;
+    alphaspeed=0.01;
     dead=false;
 }
 
 Particle Particle::operator=(const Particle& P)
 {
     Init(P.p, P.d,P.m,P.maxdistance);
+    alphaspeed=P.alphaspeed;
     return *this;
 }
