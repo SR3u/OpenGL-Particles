@@ -24,26 +24,34 @@
 #include <sstream>
 #include "MemUsage.h"
 
+bool second_attr;
+Attractor<double> secondAttr;
+
 GLfloat aspect;
 GLint Width,Height;
 GLdouble simStep=0.0;
 long delay_millis;
 
-Attractor attr_point,attr_point1,*attr[255];
-PlaneAttractor attr_plane,attr_plane1;
+Attractor<double> attr_point,attr_point1,*attr[255];
+PlaneAttractor<double> attr_plane,attr_plane1;
 int curAttr=3,max_attr=3;
 double spread[]={0.0,0.2,0.5,1,10};
 int curS=1,max_s=4;
-Emitter em;
-particles_t pq;
-
+size_t max_particles[]={0,1,2,4,8,16,32,48,64,96,128,192
+                       ,256,384,512,768,1024,1536,3072,2048
+                       ,6144,4096,8192,12288,16384,24576};
+int curP=16,max_p=25;
+Emitter<double> em;
+particles_t<double> pq;
 Texture tex[255];
+bool axis=false;
 
-int cam=0,max_cam=4;
+int cam=0,max_cam=5;
 
 void InitParticles(void)
 {
     //init attractor
+    secondAttr.Init(Vector3D(75,0,0), 3, 500000);
     attr_plane.Init(Vector3D(-25, 0, 0),//position
               25,//size
               500000);//mass
@@ -63,12 +71,13 @@ void InitParticles(void)
     //init emitter
     em.Init(Vector3D(25,0,0),//pos
             Vector3D(-1,1,1),//dir
-            1,//delay
+            20,//delay
             10,//speed
             spread[curS],//spread
             10,//particle mass
-            attr[0], &pq,//attractor and particles container
-            16384/*Max particles*/);
+            1000, &pq,//attractor and particles container
+            max_particles[curP],//Max particles
+            0);
 }
 
 double CalculateFrameRate(bool use_stdout,long delay)//returns last calculated FPS
@@ -125,6 +134,9 @@ void SetCam(void)
             d+=pq.begin()->p;
             break;
         case 4:
+            p=p*3;
+            break;
+        case 5:
             break;
         default:
             break;
@@ -134,6 +146,7 @@ void SetCam(void)
 }
 void DrawAxis(void)
 {
+    if(!axis){return;}
     glPushAttrib(GL_ALL_ATTRIB_BITS);
     glLineWidth(5);
     glPushMatrix();
@@ -172,12 +185,12 @@ void DisplayFunc(void)
     glPushMatrix();
     SetCam();
     DrawAxis();
-    
-    for (particles_t::iterator i=pq.begin(); i!=pq.end(); i++)
+    if (second_attr)
     {
-        i->Draw();
+        secondAttr.Draw();
+        secondAttr.UpdateParticles(pq, delay_millis);
     }
-    attr[curAttr]->UpdateParticles(pq, delay_millis);
+    attr[curAttr]->UpdateAndDrawParticles(pq, delay_millis);
     em.Draw();
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, tex[0].texID);
@@ -202,6 +215,15 @@ void DisplayFunc(void)
     ss.str("");
     ss<<"Emitter spread: "<<em.spread;
     OutTextXY(ss.str(), 5, Height-60, 0.1);
+    ss.str("");
+    ss<<"Emitter delay: "<<em.delay;
+    OutTextXY(ss.str(), 5, Height-75, 0.1);
+    ss.str("");
+    ss<<"Particle emission speed: "<<em.speed;
+    OutTextXY(ss.str(), 5, Height-90, 0.1);
+    ss.str("");
+    ss<<"Minimum particle speed: "<<em.minspeed;
+    OutTextXY(ss.str(), 5, Height-105, 0.1);
     glPopAttrib();
     glutSwapBuffers();
     em.Update(delay_millis);
@@ -237,7 +259,7 @@ void ReshapeFunc(int width, int height)
 
 void MouseFunc(int button, int state, int x, int y)
 {
-    switch (button)
+    /*switch (button)
     {
         case GLUT_LEFT_BUTTON:
             if (state == GLUT_DOWN)
@@ -255,7 +277,7 @@ void MouseFunc(int button, int state, int x, int y)
     if (cam<0)
         cam=max_cam;
     if (cam>max_cam)
-        cam=0;
+        cam=0;*/
     glutPostRedisplay();
 }
 void KeyboardFunc(unsigned char key,int par1,int par2)
@@ -286,9 +308,66 @@ void KeyboardFunc(unsigned char key,int par1,int par2)
         case 'e':
             curS++;
             break;
+        case 'Z':
+        case 'z':
+            axis=!axis;
+            break;
+        case 'G':
+        case 'g':
+            second_attr=!second_attr;
+            break;
+        case '+':
+        case '=':
+            curP++;
+            break;
+        case '<':
+        case ',':
+            em.delay--;
+            break;
+        case '>':
+        case '.':
+            em.delay++;
+            break;
+        case '1':
+        case '!':
+            em.minspeed-=0.1;
+            break;
+        case '2':
+        case '@':
+            em.minspeed+=0.1;
+            break;
+        case '3':
+        case '#':
+            em.speed-=0.1;
+            break;
+        case '4':
+        case '$':
+            em.speed+=0.1;
+            break;
+        case '-':
+        case '_':
+            curP--;
+            break;
+        case '0':
+        case ')':
+            pq.clear();
+            break;
+        case '9':
+        case '(':
+            attr[0]->slowcol=!attr[0]->slowcol;
+            attr[1]->slowcol=!attr[1]->slowcol;
+            attr[2]->slowcol=!attr[2]->slowcol;
+            attr[3]->slowcol=!attr[3]->slowcol;
+            break;
         default:
             break;
     }
+    if (em.delay<0)
+        em.delay=0;
+    if (em.minspeed<0)
+        em.minspeed=0;
+    if (em.speed<0)
+        em.minspeed=0;
     if (cam<0)
         cam=max_cam;
     if (cam>max_cam)
@@ -301,11 +380,31 @@ void KeyboardFunc(unsigned char key,int par1,int par2)
         curS=max_s;
     if (curS>max_s)
         curS=0;
+    if (curP<0)
+        curP=max_p;
+    if (curP>max_p)
+        curP=0;
+    em.maxParticles=max_particles[curP];
     em.spread=spread[curS];
     glutPostRedisplay();
 }
 int main(int argc, char** argv)
 {
+    std::cout<<"/************************************************************/"
+    "\n\nСИСТЕМА ЧАСТИЦ\n\n"
+    "УПРАВЛЕНИЕ:\n"
+    "        0 - стереть все частицы\n"
+    "        </> - изменить задержку выброса частиц\n"
+    "        +/- изменить макс. количество частиц\n"
+    "        W/S -- переключить камеру\n"
+    "        A/D - изменить аттрактор\n"
+    "        Q/E - изменить разброс\n"
+    "        1/2 - изменить минимальную скорость частицы (если частица медленнее данной скорости, то она \"погибает\")\n"
+    "        3/4 - изменить скорость частицы\n"
+    "        G -  вкл/выкл второй аттрактор\n"
+    "        9 - переключить collision’ы\n"
+    "        Z - вкл/выкл оси\n\n"
+    "/************************************************************/\n";
     InitParticles();
     glutInit(&argc, argv);
     glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH | GLUT_ALPHA);

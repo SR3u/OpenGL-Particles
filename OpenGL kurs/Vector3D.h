@@ -461,4 +461,6 @@ getRotationArbAxis(const vector3d& axis, const T& amount, const vector3d& origin
     return *this*cos_theta + (axis % *this)*sin_theta + axis*((axis * *this)*(1 - cos_theta));
 }
 
+
+
 #endif // VECTOR3D_H

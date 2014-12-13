@@ -6,27 +6,13 @@
 //  Copyright (c) 2014 SR3u. All rights reserved.
 //
 
+#ifndef OpenGL_kurs_Particles_h_PlaneAttractor
+#define OpenGL_kurs_Particles_h_PlaneAttractor
+
 #include "Particles.h"
-#include "Primitives.h"
 
-void PlaneAttractor::Init(Vector3D _p,double _size,double _mass)
-{
-    p=_p;
-    size=_size;
-    C[0]=Vector3D(0,-size/2.0,-size/2.0);
-    C[1]=Vector3D(0,+size/2.0,-size/2.0);
-    C[2]=Vector3D(0,+size/2.0,+size/2.0);
-    C[3]=Vector3D(0,-size/2.0,+size/2.0);
-
-    
-    C[0]+=p;
-    C[1]+=p;
-    C[2]+=p;
-    C[3]+=p;
-    m=_mass;
-    maxSpeed=0;
-}
-bool Col(Vector3D &p, Vector3D &o, Vector3D v[4])
+template<typename real_t>
+bool ColPlane(vector3d<real_t> &p, vector3d<real_t> &o, vector3d<real_t> v[4])
 {
     if (((p.X-v[0].X)*(o.X-v[0].X))<0)
     {
@@ -45,7 +31,8 @@ bool Col(Vector3D &p, Vector3D &o, Vector3D v[4])
     }
     return false;
 }
-void bound(Vector3D &p, Vector3D v[4])
+template<typename real_t>
+void boundPlane(vector3d<real_t> &p, vector3d<real_t> v[4])
 {
     if (p.X<=v[0].X)
     {
@@ -59,34 +46,38 @@ void bound(Vector3D &p, Vector3D v[4])
             p.Z=v[2].Z;
     }
 }
-void PlaneAttractor::UpdateParticle(Particle &P,long delay_millis)
+template<typename real_t>
+void PlaneAttractor<real_t>::UpdateParticle(Particle<real_t> &P,long delay_millis)
 {
-    Vector3D nPos(p);
-    bound(nPos, C);
-    double distance=(P.p-nPos).getLen();
-    double delay=delay_millis/1000.0;
-    double speed=P.d.getLen();
-    if (speed>maxSpeed){maxSpeed=speed;}
+    vector3d<real_t> nPos(this->p);
+    boundPlane(nPos, this->C);
+    real_t distance=(P.p-nPos).getLen();
+    real_t delay=delay_millis/1000.0;
+    real_t speed=P.d.getLen();
+    if (speed>this->maxSpeed){this->maxSpeed=speed;}
+    if (speed<P.minspeed){P.dead=true;return;}
 #if ALPHA_CHANGE
     if(speed>P.alphaspeed){P.alphaspeed=speed;}
     P.alpha=P.d.getLen()/P.alphaspeed;
 #endif
-    Vector3D Pos,Dir;
+    vector3d<real_t> Pos,Dir;
     Pos=P.p+P.d*delay;
-    Dir=(nPos-P.p)*delay*(m*GRAVITY_CONST)/(distance*distance)+P.d;
-    if (distance>P.maxdistance||Col(Pos, P.p, C))
+    Dir=(nPos-P.p)*delay*(this->m*GRAVITY_CONST)/(distance*distance)+P.d;
+    if (distance>P.maxdistance||ColPlane(Pos, P.p, this->C))
     {
         P.dead=true;
     }
     P.oldP=P.p;
     P.p=Pos;P.d=Dir;
 }
-void PlaneAttractor::Draw()
+template<typename real_t>
+void PlaneAttractor<real_t>::Draw()
 {
     glPushMatrix();
-    glTranslated(C[0].X, C[0].Y, C[0].Z);
-    glScaled(size, size, size);
+    glTranslated(this->C[0].X,this->C[0].Y,this->C[0].Z);
+    glScaled(this->size, this->size, this->size);
     glColor4d(1, 1, 1, 1);
     Plane(1, GL_QUADS);
     glPopMatrix();
 }
+#endif

@@ -5,31 +5,12 @@
 //  Created by SR3u on 10.12.14.
 //  Copyright (c) 2014 SR3u. All rights reserved.
 //
-
+#ifndef OpenGL_kurs_Particles_h_Particle
+#define OpenGL_kurs_Particles_h_Particle
 #include "Particles.h"
 #include "Primitives.h"
-
-double Max(double a,double b,double c)
-{
-    if(a>=b&&a>=c)
-        return a;
-    if (b>=a&&b>=c)
-        return b;
-    if (c>=b&&c>=a)
-        return c;
-    return c;
-}
-double Min(double a,double b,double c)
-{
-    if(a<=b&&a<=c)
-        return a;
-    if (b<=a&&b<=c)
-        return b;
-    if (c<=b&&c<=a)
-        return c;
-    return c;
-}
-void Particle::Draw()
+template<typename real_t>
+void Particle<real_t>::Draw()
 {
     glPushMatrix();
     glTranslated(p.X, p.Y, p.Z);
@@ -38,7 +19,8 @@ void Particle::Draw()
     glutSolidSphere(1, 3, 3);
     glPopMatrix();
 }
-void Particle::Init(Vector3D _p, Vector3D _d,double _mass, double _maxdistance)
+template<typename real_t>
+void Particle<real_t>::Init(vector3d<real_t> _p, vector3d<real_t> _d,real_t _mass, real_t _maxdistance,real_t _minspeed)
 {
     p=_p;
     maxdistance=_maxdistance;
@@ -47,11 +29,14 @@ void Particle::Init(Vector3D _p, Vector3D _d,double _mass, double _maxdistance)
     m=_mass;
     alphaspeed=0.01;
     dead=false;
+    minspeed=_minspeed;
 }
 
-Particle Particle::operator=(const Particle& P)
+template<typename real_t>
+Particle<real_t> Particle<real_t>::operator=(const Particle<real_t>& P)
 {
-    Init(P.p, P.d,P.m,P.maxdistance);
+    Init(P.p, P.d,P.m,P.maxdistance,P.minspeed);
     alphaspeed=P.alphaspeed;
     return *this;
 }
+#endif
