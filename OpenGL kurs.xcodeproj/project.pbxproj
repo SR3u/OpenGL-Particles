@@ -52,6 +52,7 @@
 		4ECF730C1A38E0C600A97847 /* OpenGL_Text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenGL_Text.cpp; sourceTree = "<group>"; };
 		4ECF730D1A38E0C600A97847 /* OpenGL_Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGL_Text.h; sourceTree = "<group>"; };
 		4ECF73101A38E75A00A97847 /* MemUsage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemUsage.h; sourceTree = "<group>"; };
+		4EDAE99F1A498DD100ABE1BD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +71,7 @@
 		4ECF72D11A3877E300A97847 = {
 			isa = PBXGroup;
 			children = (
+				4EDAE99F1A498DD100ABE1BD /* README.md */,
 				4ECF72EA1A38780D00A97847 /* GLUT.framework */,
 				4ECF72EB1A38780D00A97847 /* OpenGL.framework */,
 				4ECF72DC1A3877E300A97847 /* OpenGL kurs */,
@@ -318,6 +320,7 @@
 				4ECF72E31A3877E300A97847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
