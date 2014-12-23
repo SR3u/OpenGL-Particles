@@ -1,2 +1,2 @@
-This is a simple OpenGL + GLUT particles system for MacOS X, created for educational purposes.
+This is a simple OpenGL + GLUT particles system (generally for MacOS X, but it may be ported easily to other platforms), created for educational purposes.
 You are free to use it in your own projects as you wish.
