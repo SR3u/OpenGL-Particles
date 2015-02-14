@@ -417,7 +417,7 @@ int main(int argc, char** argv)
     glutMouseFunc(MouseFunc);
     glutKeyboardFunc(KeyboardFunc);
     glutIdleFunc(IdleFunc);
-    LoadTGATexture(&(tex[0]),"/Users/sr3u/Documents/XCode Projects/OpenGL 3/OpenGL 3/Uncompressed.tga");
+    LoadTGATexture(&(tex[0]),(char*)"/Users/sr3u/Documents/XCode Projects/OpenGL 3/OpenGL 3/Uncompressed.tga");
     glutMainLoop();
     return 0;
 }

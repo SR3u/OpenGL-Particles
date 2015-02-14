@@ -1,19 +1,19 @@
-/********************************************************************************
-/Name:		TGA.cpp																*
-/Header:	tga.h																*
-/Purpose:	Load Compressed and Uncompressed TGA files							*
-/Functions:	LoadTGA(Texture * texture, char * filename)							*
-/			LoadCompressedTGA(Texture * texture, char * filename, FILE * fTGA)	*
-/			LoadUncompressedTGA(Texture * texture, char * filename, FILE * fTGA)*	
-/*******************************************************************************/
+/********************************************************************************/
+/*Name:		TGA.cpp																*/
+/*Header:	tga.h																*/
+/*Purpose:	Load Compressed and Uncompressed TGA files							*/
+/*Functions:	LoadTGA(Texture * texture, char * filename)						*/
+/*			LoadCompressedTGA(Texture * texture, char * filename, FILE * fTGA)	*/
+/*			LoadUncompressedTGA(Texture * texture, char * filename, FILE * fTGA)*/
+/********************************************************************************/
 #include "tga.h"
 #include <iostream>
 
-/********************************************************************************
-/name :		LoadTGA(Texture * texture, char * filename)							*
-/function:  Open and test the file to make sure it is a valid TGA file			*	
-/parems:	texture, pointer to a Texture structure								*
-/			filename, string pointing to file to open							*
+/********************************************************************************/
+/*name :		LoadTGA(Texture * texture, char * filename)					    */
+/*function:  Open and test the file to make sure it is a valid TGA file			*/
+/*parems:	texture, pointer to a Texture structure								*/
+/*			filename, string pointing to file to open							*/
 /********************************************************************************/
 GLubyte uTGAcompare[12] = {0,0,2, 0,0,0,0,0,0,0,0,0};	// Uncompressed TGA Header
 GLubyte cTGAcompare[12] = {0,0,10,0,0,0,0,0,0,0,0,0};	// Compressed TGA Header

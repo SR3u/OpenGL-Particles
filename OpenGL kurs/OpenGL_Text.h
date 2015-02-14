@@ -11,6 +11,7 @@
 
 #include <GLUT/glut.h>
 #include <string>
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
 void OutTextXYZ(const std::string&text,double x,double y,double z,double size);
 void OutTextXY(const std::string&text,double x,double y,double size);

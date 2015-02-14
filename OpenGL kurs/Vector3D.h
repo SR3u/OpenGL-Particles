@@ -4,6 +4,8 @@
 #include <cstddef>
 #include <iostream>
 
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
 template<typename T>
 class vector3d
 {
