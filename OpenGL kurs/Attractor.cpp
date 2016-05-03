@@ -39,20 +39,32 @@ void Attractor<real_t>::UpdateParticles(particles_t<real_t> &P,long delay_millis
         this->UpdateParticle(*i, delay_millis);
         if (i->dead)
         {
-            P.erase(i);
+            typename particles_t<real_t>::iterator prev = i;
+            i++;
+            P.erase(prev);
+        }
+        else
+        {
+            i++;
         }
     }
 }
 template<typename real_t >
 void Attractor<real_t>::UpdateAndDrawParticles(particles_t<real_t> &P,long delay_millis)
 {
-    for (typename particles_t<real_t>::iterator i=P.begin(); i!=P.end(); i++)
+    for (typename particles_t<real_t>::iterator i=P.begin(); i!=P.end(); )
     {
         this->UpdateParticle(*i, delay_millis);
         i->Draw();
         if (i->dead)
         {
-            P.erase(i);
+            typename particles_t<real_t>::iterator prev = i;
+            i++;
+            P.erase(prev);
+        }
+        else
+        {
+            i++;
         }
     }
 }

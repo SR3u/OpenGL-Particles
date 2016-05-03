@@ -327,5 +327,6 @@ bool LoadCompressedTGA(Texture * texture, char * filename, FILE * fTGA)		// Load
 
 	while(currentpixel < pixelcount);													// Loop while there are still pixels left
 	fclose(fTGA);																		// Close the file
+    free(colorbuffer);																	// Free some allocated resources
 	return true;																		// return success
 }
