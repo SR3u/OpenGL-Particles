@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41CFB6D31CF3336F00EA1C49 /* Tests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 41CFB6D21CF3336F00EA1C49 /* Tests.mm */; };
+		41CFB6E71CF333A400EA1C49 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF72EB1A38780D00A97847 /* OpenGL.framework */; };
+		41CFB6E81CF333A600EA1C49 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF72EA1A38780D00A97847 /* GLUT.framework */; };
+		41CFB6E91CF333B800EA1C49 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72F11A387A2E00A97847 /* Texture.cpp */; };
+		41CFB6EA1CF333B800EA1C49 /* Texture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ECF72F21A387A2E00A97847 /* Texture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41CFB6EB1CF333B800EA1C49 /* Tga.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ECF72F31A387A2E00A97847 /* Tga.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41CFB6EC1CF333B800EA1C49 /* TGALoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72F41A387A2E00A97847 /* TGALoader.cpp */; };
+		41CFB6ED1CF333B800EA1C49 /* Primitives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72FB1A387C4200A97847 /* Primitives.cpp */; };
+		41CFB6EE1CF333B800EA1C49 /* Primitives.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ECF72FC1A387C4200A97847 /* Primitives.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41CFB6EF1CF333BF00EA1C49 /* Particles.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ECF73091A38D4FC00A97847 /* Particles.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41CFB6F01CF333BF00EA1C49 /* Attractor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72EE1A3878E200A97847 /* Attractor.cpp */; };
+		41CFB6F11CF333BF00EA1C49 /* PlaneAttractor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF730A1A38DD8500A97847 /* PlaneAttractor.cpp */; };
+		41CFB6F21CF333BF00EA1C49 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72F81A387BF000A97847 /* Particle.cpp */; };
+		41CFB6F31CF333BF00EA1C49 /* Emitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72FE1A38804500A97847 /* Emitter.cpp */; };
+		41CFB6F41CF333BF00EA1C49 /* Vector3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ECF73031A38977B00A97847 /* Vector3D.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41CFB6F51CF333C700EA1C49 /* OpenGL_Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF730C1A38E0C600A97847 /* OpenGL_Text.cpp */; };
+		41CFB6F61CF333C700EA1C49 /* OpenGL_Text.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ECF730D1A38E0C600A97847 /* OpenGL_Text.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41CFB6F71CF333E300EA1C49 /* liblibOpenGLParticles.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41CFB6DC1CF3339200EA1C49 /* liblibOpenGLParticles.a */; };
+		41CFB6F81CF3347400EA1C49 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF72EA1A38780D00A97847 /* GLUT.framework */; };
+		41CFB6F91CF3347600EA1C49 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF72EB1A38780D00A97847 /* OpenGL.framework */; };
+		41CFB6FB1CF3354700EA1C49 /* AttractorTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 41CFB6FA1CF3354700EA1C49 /* AttractorTest.mm */; };
 		4ECF72DE1A3877E300A97847 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72DD1A3877E300A97847 /* main.cpp */; };
 		4ECF72EC1A38780D00A97847 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF72EA1A38780D00A97847 /* GLUT.framework */; };
 		4ECF72ED1A38780D00A97847 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF72EB1A38780D00A97847 /* OpenGL.framework */; };
@@ -44,6 +65,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41CFB6C61CF3331300EA1C49 /* OpenGL_Particles_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenGL_Particles_Tests.swift; sourceTree = "<group>"; };
+		41CFB6C81CF3331300EA1C49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41CFB6D01CF3336F00EA1C49 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41CFB6D21CF3336F00EA1C49 /* Tests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Tests.mm; sourceTree = "<group>"; };
+		41CFB6D41CF3336F00EA1C49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41CFB6DC1CF3339200EA1C49 /* liblibOpenGLParticles.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibOpenGLParticles.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		41CFB6FA1CF3354700EA1C49 /* AttractorTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AttractorTest.mm; sourceTree = "<group>"; };
 		4ECF72DA1A3877E300A97847 /* OpenGL kurs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OpenGL kurs"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECF72DD1A3877E300A97847 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4ECF72EA1A38780D00A97847 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GLUT.framework; sourceTree = "<group>"; };
@@ -68,6 +96,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		41CFB6CD1CF3336F00EA1C49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41CFB6F81CF3347400EA1C49 /* GLUT.framework in Frameworks */,
+				41CFB6F91CF3347600EA1C49 /* OpenGL.framework in Frameworks */,
+				41CFB6F71CF333E300EA1C49 /* liblibOpenGLParticles.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41CFB6D91CF3339200EA1C49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41CFB6E71CF333A400EA1C49 /* OpenGL.framework in Frameworks */,
+				41CFB6E81CF333A600EA1C49 /* GLUT.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4ECF72D71A3877E300A97847 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,6 +127,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41CFB6C51CF3331300EA1C49 /* OpenGL-Particles-Tests */ = {
+			isa = PBXGroup;
+			children = (
+				41CFB6C61CF3331300EA1C49 /* OpenGL_Particles_Tests.swift */,
+				41CFB6C81CF3331300EA1C49 /* Info.plist */,
+			);
+			path = "OpenGL-Particles-Tests";
+			sourceTree = "<group>";
+		};
+		41CFB6D11CF3336F00EA1C49 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				41CFB6FA1CF3354700EA1C49 /* AttractorTest.mm */,
+				41CFB6D41CF3336F00EA1C49 /* Info.plist */,
+				41CFB6D21CF3336F00EA1C49 /* Tests.mm */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		4ECF72D11A3877E300A97847 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +153,8 @@
 				4ECF72EA1A38780D00A97847 /* GLUT.framework */,
 				4ECF72EB1A38780D00A97847 /* OpenGL.framework */,
 				4ECF72DC1A3877E300A97847 /* OpenGL kurs */,
+				41CFB6C51CF3331300EA1C49 /* OpenGL-Particles-Tests */,
+				41CFB6D11CF3336F00EA1C49 /* Tests */,
 				4ECF72DB1A3877E300A97847 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				4ECF72DA1A3877E300A97847 /* OpenGL kurs */,
+				41CFB6D01CF3336F00EA1C49 /* Tests.xctest */,
+				41CFB6DC1CF3339200EA1C49 /* liblibOpenGLParticles.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,7 +227,57 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		41CFB6DA1CF3339200EA1C49 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41CFB6EA1CF333B800EA1C49 /* Texture.h in Headers */,
+				41CFB6EB1CF333B800EA1C49 /* Tga.h in Headers */,
+				41CFB6EE1CF333B800EA1C49 /* Primitives.h in Headers */,
+				41CFB6EF1CF333BF00EA1C49 /* Particles.h in Headers */,
+				41CFB6F61CF333C700EA1C49 /* OpenGL_Text.h in Headers */,
+				41CFB6F41CF333BF00EA1C49 /* Vector3D.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		41CFB6CF1CF3336F00EA1C49 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41CFB6D51CF3336F00EA1C49 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				41CFB6CC1CF3336F00EA1C49 /* Sources */,
+				41CFB6CD1CF3336F00EA1C49 /* Frameworks */,
+				41CFB6CE1CF3336F00EA1C49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 41CFB6D01CF3336F00EA1C49 /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		41CFB6DB1CF3339200EA1C49 /* libOpenGLParticles */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41CFB6E41CF3339200EA1C49 /* Build configuration list for PBXNativeTarget "libOpenGLParticles" */;
+			buildPhases = (
+				41CFB6D81CF3339200EA1C49 /* Sources */,
+				41CFB6D91CF3339200EA1C49 /* Frameworks */,
+				41CFB6DA1CF3339200EA1C49 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = libOpenGLParticles;
+			productName = libOpenGLParticles;
+			productReference = 41CFB6DC1CF3339200EA1C49 /* liblibOpenGLParticles.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		4ECF72D91A3877E300A97847 /* OpenGL kurs */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4ECF72E11A3877E300A97847 /* Build configuration list for PBXNativeTarget "OpenGL kurs" */;
@@ -182,9 +302,16 @@
 		4ECF72D21A3877E300A97847 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = SR3u;
 				TargetAttributes = {
+					41CFB6CF1CF3336F00EA1C49 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					41CFB6DB1CF3339200EA1C49 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					4ECF72D91A3877E300A97847 = {
 						CreatedOnToolsVersion = 6.1;
 					};
@@ -203,11 +330,47 @@
 			projectRoot = "";
 			targets = (
 				4ECF72D91A3877E300A97847 /* OpenGL kurs */,
+				41CFB6CF1CF3336F00EA1C49 /* Tests */,
+				41CFB6DB1CF3339200EA1C49 /* libOpenGLParticles */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		41CFB6CE1CF3336F00EA1C49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		41CFB6CC1CF3336F00EA1C49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41CFB6FB1CF3354700EA1C49 /* AttractorTest.mm in Sources */,
+				41CFB6D31CF3336F00EA1C49 /* Tests.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41CFB6D81CF3339200EA1C49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41CFB6E91CF333B800EA1C49 /* Texture.cpp in Sources */,
+				41CFB6EC1CF333B800EA1C49 /* TGALoader.cpp in Sources */,
+				41CFB6ED1CF333B800EA1C49 /* Primitives.cpp in Sources */,
+				41CFB6F01CF333BF00EA1C49 /* Attractor.cpp in Sources */,
+				41CFB6F11CF333BF00EA1C49 /* PlaneAttractor.cpp in Sources */,
+				41CFB6F21CF333BF00EA1C49 /* Particle.cpp in Sources */,
+				41CFB6F31CF333BF00EA1C49 /* Emitter.cpp in Sources */,
+				41CFB6F51CF333C700EA1C49 /* OpenGL_Text.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4ECF72D61A3877E300A97847 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,6 +390,84 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		41CFB6D61CF3336F00EA1C49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sr3u.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		41CFB6D71CF3336F00EA1C49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sr3u.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		41CFB6E51CF3339200EA1C49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		41CFB6E61CF3339200EA1C49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		4ECF72DF1A3877E300A97847 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -327,6 +568,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		41CFB6D51CF3336F00EA1C49 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41CFB6D61CF3336F00EA1C49 /* Debug */,
+				41CFB6D71CF3336F00EA1C49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		41CFB6E41CF3339200EA1C49 /* Build configuration list for PBXNativeTarget "libOpenGLParticles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41CFB6E51CF3339200EA1C49 /* Debug */,
+				41CFB6E61CF3339200EA1C49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		4ECF72D51A3877E300A97847 /* Build configuration list for PBXProject "OpenGL kurs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

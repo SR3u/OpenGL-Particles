@@ -2,8 +2,8 @@
 //  Texture.cpp
 //  OpenGL 3
 //
-//  Created by SR3u on 28.11.14.
-//  Copyright (c) 2014 SR3u. All rights reserved.
+//  Created by Sergey Rump on 28.11.14.
+//  Copyright (c) 2014 Sergey Rump. All rights reserved.
 //
 
 #include "Texture.h"

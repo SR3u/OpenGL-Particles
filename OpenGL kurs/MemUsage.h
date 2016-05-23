@@ -2,8 +2,8 @@
 //  MemUsage.h
 //  OpenGL kurs
 //
-//  Created by SR3u on 10.12.14.
-//  Copyright (c) 2014 SR3u. All rights reserved.
+//  Created by Sergey Rump on 10.12.14.
+//  Copyright (c) 2014 Sergey Rump. All rights reserved.
 //
 
 #ifndef OpenGL_kurs_MemUsage_h

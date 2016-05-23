@@ -2,8 +2,8 @@
 //  main.cpp
 //  OpenGL_test
 //
-//  Created by SR3u on 05.09.14.
-//  Copyright (c) 2014 SR3u. All rights reserved.
+//  Created by Sergey Rump on 05.09.14.
+//  Copyright (c) 2014 Sergey Rump. All rights reserved.
 //
 /*
  Задание 7.

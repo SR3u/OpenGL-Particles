@@ -2,8 +2,8 @@
 //  Particles.h
 //  OpenGL kurs
 //
-//  Created by SR3u on 10.12.14.
-//  Copyright (c) 2014 SR3u. All rights reserved.
+//  Created by Sergey Rump on 10.12.14.
+//  Copyright (c) 2014 Sergey Rump. All rights reserved.
 //
 
 #ifndef OpenGL_kurs_Particles_h
@@ -108,7 +108,7 @@ public:
               real_t _speed,//particle's speed at emission
               real_t _spread,//particle emission spread
               real_t _mass,//particle mass
-              real_t _maxDistance,//Maximum distance between particle and emitter
+              real_t _maxDistance,//Maximum distance between particle and attractor
               particles_t<real_t > *_q,//pointer to particles container
               size_t _maxParticles,
               real_t _minspeed/*minimum particle speed (if speed is smaller, particle will be removed)*/);

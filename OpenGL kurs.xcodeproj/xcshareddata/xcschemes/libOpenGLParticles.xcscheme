@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4ECF72D91A3877E300A97847"
-               BuildableName = "OpenGL kurs"
-               BlueprintName = "OpenGL kurs"
+               BlueprintIdentifier = "41CFB6DB1CF3339200EA1C49"
+               BuildableName = "liblibOpenGLParticles.a"
+               BlueprintName = "libOpenGLParticles"
                ReferencedContainer = "container:OpenGL kurs.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,31 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "41CFB6CF1CF3336F00EA1C49"
-               BuildableName = "Tests.xctest"
-               BlueprintName = "Tests"
-               ReferencedContainer = "container:OpenGL kurs.xcodeproj">
-            </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "Tests">
-               </Test>
-            </SkippedTests>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4ECF72D91A3877E300A97847"
-            BuildableName = "OpenGL kurs"
-            BlueprintName = "OpenGL kurs"
-            ReferencedContainer = "container:OpenGL kurs.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -66,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4ECF72D91A3877E300A97847"
-            BuildableName = "OpenGL kurs"
-            BlueprintName = "OpenGL kurs"
+            BlueprintIdentifier = "41CFB6DB1CF3339200EA1C49"
+            BuildableName = "liblibOpenGLParticles.a"
+            BlueprintName = "libOpenGLParticles"
             ReferencedContainer = "container:OpenGL kurs.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -85,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4ECF72D91A3877E300A97847"
-            BuildableName = "OpenGL kurs"
-            BlueprintName = "OpenGL kurs"
+            BlueprintIdentifier = "41CFB6DB1CF3339200EA1C49"
+            BuildableName = "liblibOpenGLParticles.a"
+            BlueprintName = "libOpenGLParticles"
             ReferencedContainer = "container:OpenGL kurs.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
