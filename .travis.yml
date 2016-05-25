@@ -1,5 +1,5 @@
 language: objective-c
-script: xcodebuild -workspace 'OpenGL kurs.xcodeproj/project.xcworkspace' -scheme 'OpenGL kurs release'
-        xcodebuild test -workspace 'OpenGL kurs.xcodeproj/project.xcworkspace' -scheme 'OpenGL kurs release'
-#xcode_project: 'OpenGL kurs.xcodeproj' # path to your xcodeproj folder
-#xcode_scheme: 'OpenGL kurs release'
+#script: xcodebuild -workspace 'OpenGL kurs.xcodeproj/project.xcworkspace' -scheme 'OpenGL kurs release'
+#        xcodebuild test -workspace 'OpenGL kurs.xcodeproj/project.xcworkspace' -scheme 'OpenGL kurs release'
+xcode_project: 'OpenGL kurs.xcodeproj' # path to your xcodeproj folder
+xcode_scheme: 'OpenGL kurs release'
