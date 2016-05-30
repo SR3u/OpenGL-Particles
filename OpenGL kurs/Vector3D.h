@@ -81,6 +81,10 @@ public:
     const vector3d operator% (const vector3d& other) const;
     vector3d& operator%= (const vector3d& other);
     
+    // Equality/inequality
+    const bool operator== (const vector3d& other) const;
+    const bool operator!= (const vector3d& other) const;
+    
     // Auxiliary methods
     
     //! Returns the squared length of *this
@@ -342,7 +346,16 @@ inline const vector3d<T> vector3d<T>::operator% (const vector3d& other) const
                     Z*other.X - X*other.Z,
                     X*other.Y - Y*other.X);
 }
-
+template<typename T>
+inline const bool vector3d<T>::operator== (const vector3d& other) const
+{
+    return (X == other.X) && (Y == other.Y) && (Z == other.Z);
+}
+template<typename T>
+inline const bool vector3d<T>::operator!= (const vector3d& other) const
+{
+    return !((*this) == other);
+}
 template<typename T>
 inline vector3d<T>& vector3d<T>::operator%= (const vector3d& other)
 {

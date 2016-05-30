@@ -28,6 +28,7 @@
 		41CFB6F81CF3347400EA1C49 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF72EA1A38780D00A97847 /* GLUT.framework */; };
 		41CFB6F91CF3347600EA1C49 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF72EB1A38780D00A97847 /* OpenGL.framework */; };
 		41CFB6FB1CF3354700EA1C49 /* AttractorTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = 41CFB6FA1CF3354700EA1C49 /* AttractorTest.mm */; };
+		4E55FBC41CFB94DA000E38BA /* Vector3Test.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4E55FBC31CFB94DA000E38BA /* Vector3Test.mm */; };
 		4ECF72DE1A3877E300A97847 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF72DD1A3877E300A97847 /* main.cpp */; };
 		4ECF72EC1A38780D00A97847 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF72EA1A38780D00A97847 /* GLUT.framework */; };
 		4ECF72ED1A38780D00A97847 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF72EB1A38780D00A97847 /* OpenGL.framework */; };
@@ -72,6 +73,7 @@
 		41CFB6D41CF3336F00EA1C49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41CFB6DC1CF3339200EA1C49 /* liblibOpenGLParticles.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibOpenGLParticles.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		41CFB6FA1CF3354700EA1C49 /* AttractorTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AttractorTest.mm; sourceTree = "<group>"; };
+		4E55FBC31CFB94DA000E38BA /* Vector3Test.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Vector3Test.mm; sourceTree = "<group>"; };
 		4ECF72DA1A3877E300A97847 /* OpenGL kurs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "OpenGL kurs"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ECF72DD1A3877E300A97847 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		4ECF72EA1A38780D00A97847 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GLUT.framework; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				41CFB6FA1CF3354700EA1C49 /* AttractorTest.mm */,
 				41CFB6D41CF3336F00EA1C49 /* Info.plist */,
 				41CFB6D21CF3336F00EA1C49 /* Tests.mm */,
+				4E55FBC31CFB94DA000E38BA /* Vector3Test.mm */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41CFB6FB1CF3354700EA1C49 /* AttractorTest.mm in Sources */,
+				4E55FBC41CFB94DA000E38BA /* Vector3Test.mm in Sources */,
 				41CFB6D31CF3336F00EA1C49 /* Tests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -581,6 +585,7 @@
 				41CFB6D71CF3336F00EA1C49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41CFB6E41CF3339200EA1C49 /* Build configuration list for PBXNativeTarget "libOpenGLParticles" */ = {
 			isa = XCConfigurationList;
@@ -589,6 +594,7 @@
 				41CFB6E61CF3339200EA1C49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4ECF72D51A3877E300A97847 /* Build configuration list for PBXProject "OpenGL kurs" */ = {
 			isa = XCConfigurationList;
